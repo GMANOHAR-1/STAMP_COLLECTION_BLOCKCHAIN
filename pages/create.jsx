@@ -13,7 +13,7 @@ export default function CreateNFTPage() {
     price: '',
     imageUrl: '',
     file: null, // Add a 'file' field to store the uploaded image file
-    loyalty: '', // Add the 'loyalty' field with a default value
+    royalty: '', // Add the 'royalty' field with a default value
   });
 
   const handleChange = (e) => {
@@ -32,7 +32,7 @@ export default function CreateNFTPage() {
         // Upload the file to IPFS and get the IPFS URL
         const ipfsImageUrl = await uploadFileToIPFS(file);
         if (ipfsImageUrl.success === true) {
-          // Set the imageUrl and preserve the loyalty
+          // Set the imageUrl and preserve the royalty
           setFormData((prevData) => ({
             ...prevData,
             imageUrl: ipfsImageUrl.pinataURL,
@@ -80,7 +80,7 @@ export default function CreateNFTPage() {
       price: formData.price,
       imageUrl: formData.imageUrl,
       owner: connectedAccount,
-      loyalty: formData.loyalty, // Include the loyalty
+      royalty: formData.royalty, // Include the royalty
     };
 console.log(nftData)
     // Upload the JSON object to IPFS
@@ -101,7 +101,7 @@ console.log(nftData)
       price: '',
       imageUrl: '',
       file: null,
-      loyalty: 0,
+      royalty: 0,
     });
     toast.dismiss();
     toast.success('NFT created successfully 👌');
@@ -162,14 +162,14 @@ console.log(nftData)
           </div>
 
           <div className="mb-4">
-            <label htmlFor="loyalty" className="block font-semibold mb-2">
-              Loyalty Percentage
+            <label htmlFor="royalty" className="block font-semibold mb-2">
+              royalty Percentage
             </label>
             <input
               type="number"
-              id="loyalty"
-              name="loyalty"
-              value={formData.loyalty}
+              id="royalty"
+              name="royalty"
+              value={formData.royalty}
               onChange={handleChange}
               className="w-full px-3 py-2 border border-gray-300 rounded-md"
               required

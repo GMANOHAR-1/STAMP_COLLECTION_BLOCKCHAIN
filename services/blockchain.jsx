@@ -92,14 +92,14 @@ const connectWallet = async () => {
   }
 };
 
-const mintNft = async ({ name, description, imageUrl, price, loyalty }) => {
+const mintNft = async ({ name, description, imageUrl, price, royalty }) => {
   if (!ethereum) return reportError('Please install Metamask');
   return new Promise(async (resolve, reject) => {
     try {
       const contract = await getEthereumContract();
      
       // Assuming that `loyaltyPercentage` is a parameter, you can add it to the mint function
-      tx = await contract.mint(name, description, imageUrl, toWei(price), loyalty, {
+      tx = await contract.mint(name, description, imageUrl, toWei(price), royalty, {
         value: toWei(0.02),
       });
 

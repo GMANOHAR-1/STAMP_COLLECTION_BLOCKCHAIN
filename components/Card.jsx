@@ -1,7 +1,8 @@
 import { mintNft, buyNft, deleteNft } from '@/services/blockchain';
 import { truncate, useGlobalState } from '@/store';
 import { useRouter } from 'next/router';
-import { FaEthereum } from 'react-icons/fa';
+import { FaEthereum } from 'react-icons/fa'; // Assuming you have Font Awesome icons
+import { IoIosAlert, IoIosArrowUp, IoIosCart, IoIosCheckmark, IoIosFlame, IoIosMedal, IoIosWallet } from 'react-icons/io'; // Import an elegant symbol, like a medal
 import { toast } from 'react-toastify';
 
 const Card = ({ nftData, btn }) => {
@@ -205,12 +206,12 @@ const Card = ({ nftData, btn }) => {
           )}
         </div>
       )}
-    {console.log(nftData)}
-   
+    
       {isMinted && (
-        // Add the loyalty percentage and an elegant symbol here
         <div className="flex justify-between items-center mt-4">
-          <p className="text-gray-500">Loyalty: {nftData.royalty}%</p>
+          <p className="text-gray-500">
+            Royalty: {nftData.royalty}% 
+          </p>
         </div>
       )}
     </div>

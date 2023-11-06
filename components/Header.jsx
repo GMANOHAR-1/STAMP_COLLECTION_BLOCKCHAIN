@@ -28,21 +28,28 @@ const Header = () => {
               Create
             </Link>
           </nav>
+          <Link href="/mynfts"> {/* Add the link to your "My NFTs" page */}
+            <button
+              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-gray-200 transition-colors duration-300"
+            >
+              My NFTs
+            </button>
+          </Link>
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-md
-        hover:bg-gray-200 transition-colors duration-300"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover-bg-gray-200 transition-colors duration-300"
           >
             {truncate(connectedAccount, 4, 4, 11)}
           </button>
         </>
       ) : (
-        <button
-          onClick={connectWallet}
-          className="bg-blue-500 text-white px-4 py-2 rounded-md
-          hover:bg-gray-200 transition-colors duration-300"
-        >
-          Connect Wallet
-        </button>
+        <div>
+          <button
+            onClick={connectWallet}
+            className="bg-blue-500 text-white px-4 py-2 rounded-md hover-bg-gray-200 transition-colors duration-300"
+          >
+            Connect Wallet
+          </button>
+        </div>
       )}
     </header>
   )

@@ -16,13 +16,13 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, description, price, imageUrl, owner, loyalty } = req.body; // Include loyaltyPercentage
+    const { name, description, price, imageUrl, owner, royalty } = req.body; // Include loyaltyPercentage
 
     await client.connect();
     await client
       .db('dapplazy')
       .collection('nfts')
-      .insertOne({ name, description, price, imageUrl, owner, loyalty }); // Include loyaltyPercentage
+      .insertOne({ name, description, price, imageUrl, owner, royalty }); // Include loyaltyPercentage
 
     return res.status(200).json({ message: 'NFT created successfully' });
   } catch (error) {
