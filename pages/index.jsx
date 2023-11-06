@@ -16,7 +16,7 @@ export default function Home({ nfts }) {
 
       <div className="container p-10">
         <div className="mx-auto">
-          <h1 className="text-3xl font-bold mb-6">On-Chain Collection</h1>
+          <h1 className="text-3xl font-bold mb-6">On-Chain Collection    :   MARKETPLACE</h1>
           {nfts.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-3 py-2.5">
               {nfts.map((nft, i) => (

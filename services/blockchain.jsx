@@ -30,8 +30,8 @@ const getEthereumContract = async () => {
       return contract;
     } else {
       // No connected account, use a JsonRpcProvider
-      const provider = new ethers.providers.JsonRpcProvider('https://eth-goerli.g.alchemy.com/v2/bGSRkDSiQSUHrPtU6vcoPSWqtQUDFlgy');
-      const signer = provider.getSigner('0x608944A35F65C097e6ea54c0f6D8AB07d7F1790A');
+      const provider = new ethers.providers.JsonRpcProvider(process.env.GOERLI_URL);
+      const signer = provider.getSigner(process.env.GOERLI_ACCOUNT_ADDRESS);
 
       // Create the contract instance
       const contract = new ethers.Contract(ContractAddress, ContractAbi, signer);
@@ -48,7 +48,7 @@ const getEthereumContract = async () => {
 
 
 const ssrEthereumContract = async () => {
-  const provider = new ethers.providers.JsonRpcProvider('https://eth-goerli.g.alchemy.com/v2/bGSRkDSiQSUHrPtU6vcoPSWqtQUDFlgy')
+  const provider = new ethers.providers.JsonRpcProvider(process.env.GOERLI_URL)
   const wallet = ethers.Wallet.createRandom()
   const signer = provider.getSigner(wallet.address)
   const contract = new ethers.Contract(ContractAddress, ContractAbi, signer)
