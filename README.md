@@ -1,12 +1,11 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/26466516/107675802-36216b80-6c77-11eb-8db1-4d3407dc53d9.png" alt="Next.js and TypeScript">
 </p>
-
+ 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
 
-  <img alt="License" src="https://img.shields.io/github/license/chhpt/typescript-nextjs-starter?style=for-the-badge&color=24B36B&labelColor=000000">
-
+ 
   <a href="https://twitter.com/intent/follow?screen_name=cwuyiqing">
     <img src="https://img.shields.io/twitter/follow/cwuyiqing?style=for-the-badge&color=24B36B&labelColor=000000" alt="Follow @chhpt" />
   </a>
@@ -29,7 +28,7 @@ Install these prerequisites to follow along with the tutorial. See free video tu
 
 
 ## Step 1. Clone the project
-`git clone https://github.com/Daltonic/hardhat_ethersjs_next_starter_app <PROJECT NAME>`
+`https://github.com/GMANOHAR-1/STAMP_COLLECTION_BLOCKCHAIN`
 
 ## Step 2. Install dependencies
 ```sh
