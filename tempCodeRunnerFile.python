@@ -1,0 +1,50 @@
+def append(deque, x):
+    deque.append(x)
+
+def appendleft(deque, x):
+    deque.insert(0, x)
+
+def pop(deque):
+    return deque.pop() if deque else None
+
+def popleft(deque):
+    return deque.pop(0) if deque else None
+
+def process_operations(operations):
+    result = []
+    deque_list = []
+
+    for operation in operations:
+        operation = operation.split()
+        if operation[0] == "PUSH":
+            append(deque_list, operation[1])
+        elif operation[0] == "POP":
+            popped_element = pop(deque_list)
+            if popped_element is not None:
+                result.append(popped_element)
+                print(" ".join(deque_list) if deque_list else "Empty")
+        elif operation[0] == "INJECT":
+            for x in reversed(operation[1:]):
+                appendleft(deque_list, x)
+        elif operation[0] == "EJECT":
+            popleft(deque_list)
+        elif operation[0] == "SHOW":
+            if not deque_list:
+                result.append("Empty")
+            else:
+                result.append(" ".join(deque_list))
+            break
+
+    return result
+
+if __name__ == "__main__":
+    operations = []
+    while True:
+        operation = input().strip()
+        if not operation or operation.split()[0] == "SHOW":
+            break
+        operations.append(operation)
+
+    output = process_operations(operations)
+    for popped_elements in output:
+        print(popped_elements)

@@ -18,8 +18,8 @@ module.exports = {
     hardhat: {
       chainId: 1337
     },
-    goerli: {
-      url: process.env.GOERLI_URL,
+    sepolia: {
+      url: process.env.SEPOLIA_URL,
       accounts: [process.env.PRIVATE_KEY]
     }
   },

@@ -21,6 +21,7 @@ const getEthereumContract = async () => {
     // Check if there's a connected account
     if (connectedAccount) {
       // Set up the provider using the Web3Provider
+      console.log("i am in 1")
       const provider = new ethers.providers.Web3Provider(ethereum);
       const signer = provider.getSigner();
 
@@ -30,7 +31,8 @@ const getEthereumContract = async () => {
       return contract;
     } else {
       // No connected account, use a JsonRpcProvider
-      const provider = new ethers.providers.JsonRpcProvider(process.env.GOERLI_URL);
+      console.log("i am in 2")
+      const provider = new ethers.providers.JsonRpcProvider(process.env.SEPOLIA_URL);
       const signer = provider.getSigner(process.env.GOERLI_ACCOUNT_ADDRESS);
 
       // Create the contract instance
@@ -48,7 +50,7 @@ const getEthereumContract = async () => {
 
 
 const ssrEthereumContract = async () => {
-  const provider = new ethers.providers.JsonRpcProvider(process.env.GOERLI_URL)
+  const provider = new ethers.providers.JsonRpcProvider(process.env.SEPOLIA_URL)
   const wallet = ethers.Wallet.createRandom()
   const signer = provider.getSigner(wallet.address)
   const contract = new ethers.Contract(ContractAddress, ContractAbi, signer)
@@ -100,7 +102,7 @@ const mintNft = async ({ name, description, imageUrl, price, royalty }) => {
      
       // Assuming that `loyaltyPercentage` is a parameter, you can add it to the mint function
       tx = await contract.mint(name, description, imageUrl, toWei(price), royalty, {
-        value: toWei(0.02),
+        value: toWei(0.0002),
       });
 
       await tx.wait();
