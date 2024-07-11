@@ -1,12 +1,12 @@
-TECH STACK :
-ETHER JS
-HARDHAT
-NEXT JS
-IPFS
-TAILWIND CSS
-MONGODB
-Sepolia Testnet
+## Tech Stack
 
+- **Ether.js**: JavaScript library for Ethereum blockchain interactions.
+- **Hardhat**: Ethereum development environment.
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **IPFS**: Decentralized file storage and sharing protocol.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+- **MongoDB**: NoSQL database for data storage.
+- **Sepolia Testnet**: Ethereum test network for smart contract testing.
 
 
 <br>
