@@ -33,26 +33,27 @@ export default function Collection({ nfts }) {
     </div>
   )
 }
-
 export async function getServerSideProps() {
+  const apiUrl = process.env.API_BASE_URL + '/api/nfts/list';
   try {
-    const response = await fetch('http://localhost:3000'+ '/api/nfts/list')
+    const response = await fetch(apiUrl);
     if (response.ok) {
-      const nfts = await response.json()
-      console.log(nfts)
+      const nfts = await response.json();
+      console.log(nfts);
       return {
         props: { nfts },
-      }
+      };
     } else {
-      console.error('Failed to fetch NFTs:', response.statusText)
+      console.error('Failed to fetch NFTs:', response.statusText);
       return {
         props: { nfts: [] },
-      }
+      };
     }
   } catch (error) {
-    console.error('Error fetching NFTs:', error)
+    console.error('Error fetching NFTs:', error);
     return {
       props: { nfts: [] },
-    }
+    };
   }
 }
+
